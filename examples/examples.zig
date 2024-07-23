@@ -1,6 +1,6 @@
 const std = @import("std");
 const assert = std.testing;
-// zig test ./examples/assignment.zig
+// zig test ./examples/examples.zig
 test "assignment" {
     const constant: i32 = 5; // signed 32-bit constant
     var variable: u32 = 5000; // unsigned 32-bit variable
@@ -27,4 +27,10 @@ test "signed 32-bit int cannot represent all possible unsigned 32-bit values - F
 
 test "undefined is equal" {
     try assert.expectEqual(undefined, undefined);
+}
+
+test "arrays" {
+    const a = [5]u8{ 'h', 'e', 'l', 'l', 'o' };
+    const b = [_]u8{ 'w', 'o', 'r', 'l', 'd' };
+    try assert.expectEqual(a, b);
 }
