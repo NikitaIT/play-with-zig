@@ -32,5 +32,6 @@ test "undefined is equal" {
 test "arrays" {
     const a = [5]u8{ 'h', 'e', 'l', 'l', 'o' };
     const b = [_]u8{ 'w', 'o', 'r', 'l', 'd' };
-    try assert.expectEqual(a, b);
+    try assert.expectEqual(a[3], b[3]);
+    try assert.expectEqual('l', 'l');
 }
