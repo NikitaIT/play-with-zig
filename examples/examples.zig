@@ -36,3 +36,5 @@ test "arrays" {
     try assert.expectEqual('l', 'l');
     try assert.expectEqual(a.len, b.len);
 }
+
+test "If Expressions" {}
