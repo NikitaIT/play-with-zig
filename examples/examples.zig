@@ -47,3 +47,10 @@ test "If Expressions" {
     }
     try assert.expect(x == 1);
 }
+
+test "if statement expression" {
+    const a = true;
+    var x: u16 = 0;
+    x += if (a) 1 else 2;
+    try assert.expect(x == 1);
+}
