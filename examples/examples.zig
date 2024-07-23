@@ -34,4 +34,5 @@ test "arrays" {
     const b = [_]u8{ 'w', 'o', 'r', 'l', 'd' };
     try assert.expectEqual(a[3], b[3]);
     try assert.expectEqual('l', 'l');
+    try assert.expectEqual(a.len, b.len);
 }
