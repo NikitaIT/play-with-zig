@@ -37,4 +37,13 @@ test "arrays" {
     try assert.expectEqual(a.len, b.len);
 }
 
-test "If Expressions" {}
+test "If Expressions" {
+    const a = true;
+    var x: u16 = 0;
+    if (a) {
+        x += 1;
+    } else {
+        x += 2;
+    }
+    try assert.expect(x == 1);
+}
