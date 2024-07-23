@@ -3,4 +3,5 @@
     "editor.defaultFormatter": "ziglang.vscode-zig",
   },
   "zig.buildOnSave": true,
+  "zig.zls.enableAutofix": false
 }
