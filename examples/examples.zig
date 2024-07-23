@@ -37,7 +37,7 @@ test "arrays" {
     try assert.expectEqual(a.len, b.len);
 }
 
-test "If Expressions" {
+test "If Expression blocks" {
     const a = true;
     var x: u16 = 0;
     if (a) {
