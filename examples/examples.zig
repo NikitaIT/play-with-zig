@@ -55,3 +55,11 @@ test "if statement expression" {
     x += if (a) 1 else 2;
     try expect(x == 1);
 }
+
+test "while" {
+    var i: u8 = 2;
+    while (i < 100) {
+        i *= 2;
+    }
+    try expect(i == 128); // 2**99 in unsigned 8-bit integer same as (2**7) % (2**8)
+}
