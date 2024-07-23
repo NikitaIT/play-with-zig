@@ -1,5 +1,6 @@
 const std = @import("std");
 const assert = std.testing;
+const expect = std.testing.expect;
 // zig test ./examples/examples.zig
 test "assignment" {
     const constant: i32 = 5; // signed 32-bit constant
@@ -52,5 +53,5 @@ test "if statement expression" {
     const a = true;
     var x: u16 = 0;
     x += if (a) 1 else 2;
-    try assert.expect(x == 1);
+    try expect(x == 1);
 }
