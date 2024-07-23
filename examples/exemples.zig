@@ -17,3 +17,14 @@ test "assignment" {
     try assert.expectEqual(constant, inferred_constant);
     try assert.expectEqual(variable, inferred_variable);
 }
+
+test "signed 32-bit int cannot represent all possible unsigned 32-bit values - Fixed" {
+    const a: i32 = undefined; // Assign a valid value to 'a'
+    const b: u32 = undefined; // Assign a valid value to 'b'
+    try assert.expectEqual(undefined, b);
+    try assert.expectEqual(undefined, a);
+}
+
+test "undefined is equal" {
+    try assert.expectEqual(undefined, undefined);
+}
