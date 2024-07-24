@@ -95,3 +95,24 @@ test "while with break" {
     }
     try expect(sum == 1);
 }
+
+test "for" {
+    //character literals are equivalent to integer literals
+    const string = [_]u8{ 'a', 'b', 'c' };
+
+    // is it 0.. -> index?
+    for (string, 0..) |character, index| {
+        try expect(character == string[index]);
+    }
+
+    for (string) |character| {
+        _ = character;
+    }
+
+    // wtf is this?
+    for (string, 0..) |@"_", index| {
+        try expect(@"_" == string[index]);
+    }
+
+    for (string) |_| {}
+}
