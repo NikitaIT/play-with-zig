@@ -78,9 +78,20 @@ test "while with continue expression instead of for" {
 test "while with continue" {
     var sum: u8 = 0;
     var i: u8 = 0;
+    // 0 + 1 + continue + 3 = 4
     while (i <= 3) : (i += 1) {
         if (i == 2) continue;
         sum += i;
     }
     try expect(sum == 4);
+}
+test "while with break" {
+    var sum: u8 = 0;
+    var i: u8 = 0;
+    // 0 + 1 + break = 1
+    while (i <= 3) : (i += 1) {
+        if (i == 2) break;
+        sum += i;
+    }
+    try expect(sum == 1);
 }
