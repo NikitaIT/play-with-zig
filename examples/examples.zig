@@ -67,6 +67,8 @@ test "while" {
 test "while with continue expression instead of for" {
     var sum: u8 = 0;
     var i: u8 = 1;
+    // 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = n + n-1 + n-2 + n-3
+    // 1 + (1 + 1) + (2 + 1) + (3 + 1) ... = 1 + ... + 9*2 + 1 = 2 + ... + 9*2 = n(n+1)/2 = 10*11/2 = 5*11 = 55
     while (i <= 10) : (i += 1) {
         sum += i;
     }
