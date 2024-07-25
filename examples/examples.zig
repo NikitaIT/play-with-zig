@@ -133,7 +133,7 @@ test "u should ignore the return value explicitly" {
 
 test "defer works with any expression" {
     var x: i16 = 5;
-    {
+    { // scope for defer
         defer x += 2;
         try expect(x == 5);
     }
