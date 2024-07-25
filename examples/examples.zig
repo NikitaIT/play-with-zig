@@ -122,7 +122,7 @@ fn fibonacci(n: u16) u16 {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-test "function recursion" {
+test "tail recursion is not possible in Zig" {
     const x = fibonacci(10);
     try expect(x == 55);
 }
