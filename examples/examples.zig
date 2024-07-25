@@ -139,3 +139,16 @@ test "defer works with any expression" {
     }
     try expect(x == 7);
 }
+
+const FileOpenError = error{
+    AccessDenied,
+    OutOfMemory,
+    FileNotFound,
+};
+
+const AllocationError = error{OutOfMemory};
+
+test "coerce error from a subset to a superset, but it's compile-time error name, not hinted in IDE" {
+    const err: FileOpenError = AllocationError.OutOfMemory;
+    try expect(err == FileOpenError.OutOfMemory);
+}
