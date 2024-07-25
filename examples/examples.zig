@@ -152,3 +152,12 @@ test "coerce error from a subset to a superset, but it's compile-time error name
     const err: FileOpenError = AllocationError.OutOfMemory;
     try expect(err == FileOpenError.OutOfMemory);
 }
+
+test "error union, but u can't use it as u32!u16" {
+    const maybe_error: AllocationError!u16 = 10;
+
+    const no_error = maybe_error catch 0;
+
+    try expect(@TypeOf(no_error) == u16);
+    try expect(no_error == 10);
+}
