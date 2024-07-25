@@ -126,3 +126,7 @@ test "tail recursion is not possible in Zig" {
     const x = fibonacci(10);
     try expect(x == 55);
 }
+
+test "u should ignore the return value explicitly" {
+    _ = fibonacci(10);
+}
