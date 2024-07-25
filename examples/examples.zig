@@ -134,7 +134,7 @@ test "u should ignore the return value explicitly" {
 test "defer works with any expression" {
     var x: i16 = 5;
     { // scope for defer
-        defer x += 2;
+        defer x += 2; // this is better then "use" statement, because it allows u to make explicit disposables
         try expect(x == 5);
     }
     try expect(x == 7);
