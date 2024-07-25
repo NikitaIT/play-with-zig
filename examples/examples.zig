@@ -130,3 +130,12 @@ test "tail recursion is not possible in Zig" {
 test "u should ignore the return value explicitly" {
     _ = fibonacci(10);
 }
+
+test "defer works with any expression" {
+    var x: i16 = 5;
+    {
+        defer x += 2;
+        try expect(x == 5);
+    }
+    try expect(x == 7);
+}
